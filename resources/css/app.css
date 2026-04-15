@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Steel Blue global theme lock */
+        .bg-black,
+        .bg-dark {
+            background-color: #111827 !important;
+        }
+        .bg-neutral-dark {
+            background-color: #1f2937 !important;
+        }
+        .bg-light,
+        .bg-gray-100 {
+            background-color: #e5e7eb !important;
+        }
+        .bg-gray-200 {
+            background-color: #94a3b8 !important;
+        }
+        .text-black,
+        .text-dark {
+            color: #0b1220 !important;
+        }
+        .text-neutral-dark {
+            color: #334155 !important;
+        }
+        .border-black {
+            border-color: #111827 !important;
+        }
+        .border-gray,
+        .border-gray-800 {
+            border-color: #64748b !important;
+        }
+        .text-gray-300 {
+            color: #cbd5e1 !important;
+        }
+        .text-gray-400,
+        .text-gray-500 {
+            color: #94a3b8 !important;
+        }
+        .hover\:bg-black:hover,
+        .hover\:bg-dark:hover {
+            background-color: #111827 !important;
+        }
+        .hover\:bg-neutral-dark:hover {
+            background-color: #1f2937 !important;
+        }
+        .hover\:bg-gray-100:hover {
+            background-color: #dbe1e9 !important;
+        }
+        .hover\:bg-gray-200:hover {
+            background-color: #7f95ad !important;
+        }
+        .hover\:text-black:hover {
+            color: #0b1220 !important;
+        }
+        .group:hover .group-hover\:bg-dark {
+            background-color: #111827 !important;
+        }
+        .group:hover .group-hover\:border-white {
+            border-color: #ffffff !important;
+        }
+        .group:hover h1,
+        .group:hover h2,
+        .group:hover h3,
+        .group:hover h4,
+        .group:hover h5,
+        .group:hover h6,
+        .group:hover p,
+        .group:hover li,
+        .group:hover span,
+        .group:hover svg,
+        .group:hover .text-dark,
+        .group:hover .text-black,
+        .group:hover .text-neutral-dark {
+            color: #ffffff !important;
+        }
+        .group:hover .btn-fixed-on-group,
+        .group:hover .btn-fixed-on-group span,
+        .group:hover .btn-fixed-on-group svg {
+            color: #0b1220 !important;
+            background-color: #ffffff !important;
+            border-color: #111827 !important;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 1px solid #111827;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .btn-sm {
+            padding: 0.75rem 1.25rem;
+            font-size: 16px;
+        }
+        .btn-md {
+            padding: 1rem 2rem;
+            font-size: 18px;
+        }
+        .btn-primary {
+            background-color: #111827;
+            color: #ffffff;
+            border-color: #111827;
+        }
+        .btn-primary:hover {
+            background-color: #1f2937;
+        }
+        .btn-light {
+            background-color: #ffffff;
+            color: #0b1220;
+            border-color: #111827;
+        }
+        .btn-light:hover {
+            background-color: #dbe1e9;
+        }
+        .btn-outline-light {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+        .btn-outline-light:hover {
+            background-color: #ffffff;
+            color: #0b1220;
+        }
+        .btn-outline-dark {
+            background-color: transparent;
+            color: #0b1220;
+            border: 2px solid #111827;
+        }
+        .btn-outline-dark:hover {
+            background-color: #111827;
+            color: #ffffff;
+        }
+        .hero-pagination .swiper-pagination-bullet,
+        .testimonial-pagination .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #94a3b8;
+            opacity: 1;
+            border-radius: 0;
+            transition: all 0.2s ease;
+        }
+        .hero-pagination .swiper-pagination-bullet-active,
+        .testimonial-pagination .swiper-pagination-bullet-active {
+            width: 28px;
+            background: #ffffff;
+        }
