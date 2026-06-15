@@ -17,27 +17,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'system-ui', 'sans-serif'],
-                        heading: ['Bebas Neue', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: '#111827',
-                        'neutral-dark': '#1F2937',
-                        light: '#E5E7EB',
-                        gray: '#94A3B8',
-                    }
-                }
-            }
-        }
-    </script>
-    
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -49,60 +28,60 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Steel Blue global theme lock */
+        /* Black and white global theme lock */
         .bg-black,
         .bg-dark {
-            background-color: #111827 !important;
+            background-color: #000000 !important;
         }
         .bg-neutral-dark {
-            background-color: #1f2937 !important;
+            background-color: #111111 !important;
         }
         .bg-light,
         .bg-gray-100 {
-            background-color: #e5e7eb !important;
+            background-color: #f5f5f5 !important;
         }
         .bg-gray-200 {
-            background-color: #94a3b8 !important;
+            background-color: #d4d4d4 !important;
         }
         .text-black,
         .text-dark {
-            color: #0b1220 !important;
+            color: #000000 !important;
         }
         .text-neutral-dark {
-            color: #334155 !important;
+            color: #262626 !important;
         }
         .border-black {
-            border-color: #111827 !important;
+            border-color: #000000 !important;
         }
         .border-gray,
         .border-gray-800 {
-            border-color: #64748b !important;
+            border-color: #404040 !important;
         }
         .text-gray-300 {
-            color: #cbd5e1 !important;
+            color: #d4d4d4 !important;
         }
         .text-gray-400,
         .text-gray-500 {
-            color: #94a3b8 !important;
+            color: #737373 !important;
         }
         .hover\:bg-black:hover,
         .hover\:bg-dark:hover {
-            background-color: #111827 !important;
+            background-color: #000000 !important;
         }
         .hover\:bg-neutral-dark:hover {
-            background-color: #1f2937 !important;
+            background-color: #111111 !important;
         }
         .hover\:bg-gray-100:hover {
-            background-color: #dbe1e9 !important;
+            background-color: #e5e5e5 !important;
         }
         .hover\:bg-gray-200:hover {
-            background-color: #7f95ad !important;
+            background-color: #a3a3a3 !important;
         }
         .hover\:text-black:hover {
-            color: #0b1220 !important;
+            color: #000000 !important;
         }
         .group:hover .group-hover\:bg-dark {
-            background-color: #111827 !important;
+            background-color: #000000 !important;
         }
         .group:hover .group-hover\:border-white {
             border-color: #ffffff !important;
@@ -125,16 +104,16 @@
         .group:hover .btn-fixed-on-group,
         .group:hover .btn-fixed-on-group span,
         .group:hover .btn-fixed-on-group svg {
-            color: #0b1220 !important;
+            color: #000000 !important;
             background-color: #ffffff !important;
-            border-color: #111827 !important;
+            border-color: #000000 !important;
         }
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            border: 1px solid #111827;
+            border: 1px solid #000000;
             font-weight: 700;
             letter-spacing: 0.02em;
             text-align: center;
@@ -150,20 +129,20 @@
             font-size: 18px;
         }
         .btn-primary {
-            background-color: #111827;
+            background-color: #000000;
             color: #ffffff;
-            border-color: #111827;
+            border-color: #000000;
         }
         .btn-primary:hover {
-            background-color: #1f2937;
+            background-color: #111111;
         }
         .btn-light {
             background-color: #ffffff;
-            color: #0b1220;
-            border-color: #111827;
+            color: #000000;
+            border-color: #000000;
         }
         .btn-light:hover {
-            background-color: #dbe1e9;
+            background-color: #e5e5e5;
         }
         .btn-outline-light {
             background-color: transparent;
@@ -172,22 +151,22 @@
         }
         .btn-outline-light:hover {
             background-color: #ffffff;
-            color: #0b1220;
+            color: #000000;
         }
         .btn-outline-dark {
             background-color: transparent;
-            color: #0b1220;
-            border: 2px solid #111827;
+            color: #000000;
+            border: 2px solid #000000;
         }
         .btn-outline-dark:hover {
-            background-color: #111827;
+            background-color: #000000;
             color: #ffffff;
         }
         .hero-pagination .swiper-pagination-bullet,
         .testimonial-pagination .swiper-pagination-bullet {
             width: 10px;
             height: 10px;
-            background: #94a3b8;
+            background: #525252;
             opacity: 1;
             border-radius: 0;
             transition: all 0.2s ease;
@@ -221,8 +200,6 @@
             <!-- Menu -->
             <ul class="hidden lg:flex items-center gap-x-8 text-neutral-dark font-medium">
                 <li><a href="{{ route('home') }}" class="hover:text-black transition-colors">Home</a></li>
-                <li><a href="{{ route('home') }}#what-we-build" class="hover:text-black transition-colors">What We Build</a></li>
-                <li><a href="{{ route('home') }}#our-process" class="hover:text-black transition-colors">Our Process</a></li>
                 <li><a href="{{ route('about') }}" class="hover:text-black transition-colors">About Us</a></li>
                 <li><a href="{{ route('contact') }}" class="hover:text-black transition-colors">Contact</a></li>
             </ul>
@@ -246,8 +223,6 @@
             <div class="max-w-[1440px] mx-auto px-6 py-4">
                 <ul class="flex flex-col gap-3 text-neutral-dark font-medium">
                     <li><a href="{{ route('home') }}" class="block py-2 hover:text-black transition-colors">Home</a></li>
-                    <li><a href="{{ route('home') }}#what-we-build" class="block py-2 hover:text-black transition-colors">What We Build</a></li>
-                    <li><a href="{{ route('home') }}#our-process" class="block py-2 hover:text-black transition-colors">Our Process</a></li>
                     <li><a href="{{ route('about') }}" class="block py-2 hover:text-black transition-colors">About Us</a></li>
                     <li><a href="{{ route('contact') }}" class="block py-2 hover:text-black transition-colors">Contact</a></li>
                 </ul>

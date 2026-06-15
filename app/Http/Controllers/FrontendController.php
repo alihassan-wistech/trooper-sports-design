@@ -34,6 +34,15 @@ class FrontendController extends Controller
         ));
     }
 
+    public function teamUniforms()
+    {
+        return view('frontend.team-uniforms', $this->buildSeoPayload(
+            'team-uniforms',
+            'Custom Team Uniforms – Bulk Manufacturing by Troopers Sports',
+            'Explore bulk custom team uniform manufacturing with sub-categories, construction details, branding options, and gallery inspiration for clubs, brands, and distributors.'
+        ));
+    }
+
     private function buildSeoPayload(string $pageKey, string $defaultTitle, string $defaultDescription): array
     {
         $pageSeo = SeoPageSetting::query()->where('page_key', $pageKey)->first();
@@ -57,6 +66,7 @@ class FrontendController extends Controller
             'home' => route('home'),
             'about' => route('about'),
             'contact' => route('contact'),
+            'team-uniforms' => route('categories.team-uniforms'),
             default => url('/'.ltrim($pageKey, '/')),
         };
 

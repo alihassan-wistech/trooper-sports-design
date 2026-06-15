@@ -10,6 +10,7 @@ Route::middleware('track.visitors')->group(function () {
     Route::get('/', [FrontendController::class, 'home'])->name('home');
     Route::get('/about', [FrontendController::class, 'about'])->name('about');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+    Route::get('/categories/team-uniforms', [FrontendController::class, 'teamUniforms'])->name('categories.team-uniforms');
 });
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AnalyticsDashboardController::class, 'dashboard'])->name('dashboard');

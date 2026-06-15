@@ -3,86 +3,139 @@
 @section('title', 'Troopers Sports – Premium Factory-Direct Custom Sportswear')
 
 @section('content')
+    @php
+        $heroSlides = [
+            [
+                'image' => asset('images/hero-slider/01.jpeg'),
+                'title' => '25,000 Units Every Month.<br>2-Week Turnaround.<br><span class="text-gray-300">Direct from Sialkot Factory.</span>',
+                'description' => 'No middlemen. No 6–8 week waits. Just premium custom sportswear, team wear & fitness gear at real wholesale prices that protect your margins.',
+                'primary' => ['label' => 'GET WHOLESALE QUOTE IN 24 HOURS', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'See Our Full Capabilities', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+            [
+                'image' => asset('images/hero-slider/02.jpeg'),
+                'title' => 'Your Brand. Your Design.<br><span class="text-gray-300">Our Quality. Your Profit.</span>',
+                'description' => 'Full customization (logos, names, numbers, colors) + fastest sublimation & heat transfer in Sialkot. Perfect for teams, retailers, private labels and wholesalers.',
+                'primary' => ['label' => 'START YOUR CUSTOM PROJECT', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Browse 200+ Products', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+            [
+                'image' => asset('images/hero-slider/03.jpeg'),
+                'title' => 'Trusted by Teams & Brands in <span class="text-gray-300">15+ Countries</span>',
+                'description' => 'Low MOQ • Bulk Discounts • OEM & Private Label • Worldwide Shipping • 100% Quality Guarantee',
+                'primary' => ['label' => 'BECOME A PARTNER TODAY', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Chat with Sales on WhatsApp', 'url' => 'https://wa.me/923418649479', 'class' => 'btn btn-outline-light btn-md'],
+                'secondary_icon' => 'whatsapp',
+            ],
+            [
+                'image' => asset('images/hero-slider/04.jpeg'),
+                'title' => 'Retail-Ready Sportswear.<br><span class="text-gray-300">Built for Reorders.</span>',
+                'description' => 'Consistent sizing, durable trims, and dependable production planning for shops, distributors, and sportswear brands that need repeatable quality.',
+                'primary' => ['label' => 'PLAN YOUR NEXT ORDER', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Discuss Private Label Options', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+            [
+                'image' => asset('images/hero-slider/05.jpeg'),
+                'title' => 'From Samples to Bulk Runs.<br><span class="text-gray-300">One Manufacturing Partner.</span>',
+                'description' => 'We help you move from concept to approved sample to full production without juggling multiple vendors, delays, or quality compromises.',
+                'primary' => ['label' => 'REQUEST A SAMPLE PLAN', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Review Production Workflow', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+            [
+                'image' => asset('images/hero-slider/06.jpeg'),
+                'title' => 'Serious Capacity.<br><span class="text-gray-300">Responsive Communication.</span>',
+                'description' => 'Factory-direct coordination, fast answers, and scalable output for clubs, academies, wholesalers, and growing global sportswear programs.',
+                'primary' => ['label' => 'TALK TO THE FACTORY TEAM', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Get Delivery Timelines', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+            [
+                'image' => asset('images/hero-slider/07.jpeg'),
+                'title' => 'Performance Gear at Scale.<br><span class="text-gray-300">Built for Serious Buyers.</span>',
+                'description' => 'From club orders to wholesale programs, we deliver dependable manufacturing, clean finishing, and repeatable quality across every production run.',
+                'primary' => ['label' => 'REQUEST A BULK QUOTE', 'url' => route('contact'), 'class' => 'btn btn-light btn-md'],
+                'secondary' => ['label' => 'Explore Manufacturing Options', 'url' => route('contact'), 'class' => 'btn btn-outline-light btn-md'],
+            ],
+        ];
+
+        $whatWeOfferCards = [
+            [
+                'number' => '01',
+                'icon' => asset('images/what-we-offer/1.png'),
+                'title' => 'Cut & Sew Customization',
+                'description' => 'Tailor-made apparel using cut & sew services. We handle every detail from fabric cutting to final stitching — your designs, our craftsmanship.',
+            ],
+            [
+                'number' => '02',
+                'icon' => asset('images/what-we-offer/2.png'),
+                'title' => 'Heat Transfer & Vinyl Printing',
+                'description' => 'Perfect for names, numbers, and logos. A great option for team uniforms, promotional wear, or fast custom orders.',
+            ],
+            [
+                'number' => '03',
+                'icon' => asset('images/what-we-offer/3.png'),
+                'title' => 'Private Labeling & Branding',
+                'description' => 'We offer woven labels, printed neck labels, hang tags, packaging, and complete branding solutions for your apparel line.',
+            ],
+            [
+                'number' => '04',
+                'icon' => asset('images/what-we-offer/4.png'),
+                'title' => 'Custom Embroidery',
+                'description' => 'High-density stitching adds a premium, textured finish to your logos and custom branding for a long-lasting aesthetic on any garment.',
+            ],
+            [
+                'number' => '05',
+                'icon' => asset('images/what-we-offer/5.png'),
+                'title' => 'Sublimation Printing',
+                'description' => 'Vibrant full-color sublimation printing for teamwear, jerseys, and sports apparel. Long-lasting, fade-resistant results on 100% polyester fabrics.',
+            ],
+            [
+                'number' => '06',
+                'icon' => asset('images/what-we-offer/6.png'),
+                'title' => 'Screen Printing',
+                'description' => 'Traditional screen printing for bold, durable designs on t-shirts, hoodies, and more. Ideal for large volumes and sharp logos.',
+            ],
+            [
+                'number' => '07',
+                'icon' => asset('images/what-we-offer/6.png'),
+                'title' => 'Product Prototyping & Sampling',
+                'description' => 'From initial concept to finished sample — we prototype and test every detail before you commit to a full production run.',
+            ],
+        ];
+    @endphp
+
     <!-- 2. Hero Section -->
-    <section class="relative h-[60vh] max-h-[600px] min-h-[450px] bg-neutral-dark overflow-hidden border-b border-black">
+    <section class="relative h-[100vh] max-h-[700px] min-h-[450px] bg-neutral-dark overflow-hidden border-b border-black">
         <div class="swiper hero-swiper h-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide relative">
-                    <div class="absolute inset-0 z-0 bg-gray-500">
-                        <div class="font-heading absolute inset-0 flex items-center justify-center text-white/50 font-bold text-4xl uppercase tracking-widest">Image Placeholder</div>
-                        <div class="absolute inset-0 bg-black/60"></div>
-                    </div>
-                    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white h-full flex items-center">
-                        <div class="max-w-3xl">
-                            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em]">
-                                25,000 Units Every Month.<br>
-                                2-Week Turnaround.<br>
-                                <span class="text-gray-300">Direct from Sialkot Factory.</span>
-                            </h1>
-                            <p class="mt-6 text-lg md:text-xl font-medium leading-[1.4] text-gray-300">
-                                No middlemen. No 6–8 week waits. Just premium custom sportswear, team wear & fitness gear at real wholesale prices that protect your margins.
-                            </p>
-                            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                                <a href="{{ route('contact') }}" class="btn btn-light btn-md">
-                                    GET WHOLESALE QUOTE IN 24 HOURS
-                                </a>
-                                <a href="{{ route('contact') }}" class="btn btn-outline-light btn-md">
-                                    See Our Full Capabilities
-                                </a>
+                @foreach ($heroSlides as $heroSlide)
+                    <div class="swiper-slide relative">
+                        <div
+                            class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                            style="background-image: linear-gradient(100deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.78) 34%, rgba(0, 0, 0, 0.46) 62%, rgba(0, 0, 0, 0.14) 82%, rgba(0, 0, 0, 0.03) 100%), url('{{ $heroSlide['image'] }}');"
+                        ></div>
+                        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white h-full flex items-center">
+                            <div class="max-w-3xl">
+                                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em]">
+                                    {!! $heroSlide['title'] !!}
+                                </h1>
+                                <p class="mt-6 text-lg md:text-xl font-medium leading-[1.4] text-gray-300">
+                                    {{ $heroSlide['description'] }}
+                                </p>
+                                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                                    <a href="{{ $heroSlide['primary']['url'] }}" class="{{ $heroSlide['primary']['class'] }}">
+                                        {{ $heroSlide['primary']['label'] }}
+                                    </a>
+                                    <a href="{{ $heroSlide['secondary']['url'] }}" class="{{ $heroSlide['secondary']['class'] }}">
+                                        @if (($heroSlide['secondary_icon'] ?? null) === 'whatsapp')
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                                        @endif
+                                        {{ $heroSlide['secondary']['label'] }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide relative">
-                    <div class="absolute inset-0 z-0 bg-gray-600">
-                        <div class="font-heading absolute inset-0 flex items-center justify-center text-white/50 font-bold text-4xl uppercase tracking-widest">Image Placeholder</div>
-                        <div class="absolute inset-0 bg-black/60"></div>
-                    </div>
-                    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white h-full flex items-center">
-                        <div class="max-w-3xl">
-                            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em]">
-                                Your Brand. Your Design.<br>
-                                <span class="text-gray-300">Our Quality. Your Profit.</span>
-                            </h1>
-                            <p class="mt-6 text-lg md:text-xl font-medium leading-[1.4] text-gray-300">
-                                Full customization (logos, names, numbers, colors) + fastest sublimation & heat transfer in Sialkot. Perfect for teams, retailers, private labels and wholesalers.
-                            </p>
-                            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                                <a href="{{ route('contact') }}" class="btn btn-light btn-md">
-                                    START YOUR CUSTOM PROJECT
-                                </a>
-                                <a href="{{ route('contact') }}" class="btn btn-outline-light btn-md">
-                                    Browse 200+ Products
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide relative">
-                    <div class="absolute inset-0 z-0 bg-gray-700">
-                        <div class="font-heading absolute inset-0 flex items-center justify-center text-white/50 font-bold text-4xl uppercase tracking-widest">Image Placeholder</div>
-                        <div class="absolute inset-0 bg-black/60"></div>
-                    </div>
-                    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10 w-full text-white h-full flex items-center">
-                        <div class="max-w-3xl">
-                            <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-[-0.02em]">
-                                Trusted by Teams & Brands in <span class="text-gray-300">15+ Countries</span>
-                            </h1>
-                            <p class="mt-6 text-lg md:text-xl font-medium leading-[1.4] text-gray-300">
-                                Low MOQ • Bulk Discounts • OEM & Private Label • Worldwide Shipping • 100% Quality Guarantee
-                            </p>
-                            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                                <a href="{{ route('contact') }}" class="btn btn-light btn-md">
-                                    BECOME A PARTNER TODAY
-                                </a>
-                                <a href="https://wa.me/923418649479" class="btn btn-primary btn-md border-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
-                                    Chat with Sales on WhatsApp
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="hero-pagination absolute bottom-8 left-0 right-0 z-20 text-center"></div>
         </div>
@@ -116,7 +169,84 @@
         </div>
     </div>
 
-    <!-- 4. Why Partner With Troopers Sports -->
+    <!-- 4. What We Build (Category-led, Detail-page First) -->
+    <section id="what-we-build" class="py-20 lg:py-24 bg-white border-b border-black">
+        <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-4xl mx-auto mb-12">
+                <h2 class="font-heading text-4xl md:text-[48px] font-bold tracking-[-0.02em] text-dark leading-[1.2]">
+                    What We Build For Teams, Brands & Clubs
+                </h2>
+                <p class="mt-4 text-xl md:text-[24px] font-medium text-neutral-dark leading-[1.4]">
+                    Browse by category. Each card opens a full detail page with materials, construction, branding options, MOQ, and lead time.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
+                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
+                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">TEAM WEAR</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Uniforms</h3>
+                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
+                            Built for match-day performance with sport-specific cuts, panel mapping, and durable branding methods.
+                        </p>
+                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
+                            <li>AFL, basketball, cricket, soccer, rugby</li>
+                            <li>Game jerseys, shorts, warm-up sets</li>
+                            <li>Sublimation, embroidery, heat transfer</li>
+                        </ul>
+                        <a href="{{ route('categories.team-uniforms') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
+                            VIEW UNIFORM DETAIL PAGE <span>→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
+                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
+                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">APPAREL</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Apparel</h3>
+                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
+                            Off-field and training apparel engineered for comfort, fit consistency, and repeat-season reorders.
+                        </p>
+                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
+                            <li>Polos, hoodies, jackets, training tees</li>
+                            <li>Performance and fleece material options</li>
+                            <li>Private label and retail-ready finishing</li>
+                        </ul>
+                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
+                            VIEW APPAREL DETAIL PAGE <span>→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
+                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
+                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">MERCH</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Club & Fan Merchandise</h3>
+                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
+                            Supporter and community merchandise for clubs, schools, and events with controlled quality at scale.
+                        </p>
+                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
+                            <li>Beanies, scarves, hats, promo products</li>
+                            <li>Sponsor-ready artwork placement</li>
+                            <li>Bulk and seasonal reorder planning</li>
+                        </ul>
+                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
+                            VIEW MERCH DETAIL PAGE <span>→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Why Partner With Troopers Sports -->
     <section class="py-20 lg:py-24 bg-light border-b border-black">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -192,80 +322,70 @@
         </div>
     </section>
 
-    <!-- 5. What We Build (Category-led, Detail-page First) -->
-    <section id="what-we-build" class="py-20 lg:py-24 bg-white border-b border-black">
+    <!-- 6. What We Offer -->
+    <section id="what-we-offer" class="py-20 lg:py-24 bg-white border-b border-black">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-4xl mx-auto mb-12">
-                <h2 class="font-heading text-4xl md:text-[48px] font-bold tracking-[-0.02em] text-dark leading-[1.2]">
-                    What We Build For Teams, Brands & Clubs
-                </h2>
-                <p class="mt-4 text-xl md:text-[24px] font-medium text-neutral-dark leading-[1.4]">
-                    Browse by category. Each card opens a full detail page with materials, construction, branding options, MOQ, and lead time.
-                </p>
+            <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between mb-12">
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center border border-black bg-light px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] text-neutral-dark">
+                        Our Capabilities
+                    </span>
+                    <h2 class="mt-5 font-heading text-4xl md:text-[48px] font-bold tracking-[-0.02em] text-dark leading-[1.1]">
+                        What We Offer
+                    </h2>
+                </div>
+
+                <a href="{{ route('contact') }}" class="btn btn-outline-dark btn-md shrink-0">
+                    Get Quote
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                    </svg>
+                </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">TEAM WEAR</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Uniforms</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Built for match-day performance with sport-specific cuts, panel mapping, and durable branding methods.
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                @foreach ($whatWeOfferCards as $offerCard)
+                    <article class="group flex h-full flex-col border border-black bg-light p-8 transition-all duration-300 hover:bg-dark">
+                        <div class="text-sm font-bold tracking-[0.2em] text-neutral-dark transition-colors group-hover:text-gray-300">
+                            {{ $offerCard['number'] }}
+                        </div>
+                        <img
+                            src="{{ $offerCard['icon'] }}"
+                            alt="{{ $offerCard['title'] }}"
+                            class="mt-8 h-16 w-16 object-contain"
+                            loading="lazy"
+                        >
+                        <h3 class="mt-8 text-[24px] font-semibold leading-tight text-dark transition-colors group-hover:text-white">
+                            {{ $offerCard['title'] }}
+                        </h3>
+                        <p class="mt-4 text-[17px] leading-relaxed text-neutral-dark transition-colors group-hover:text-gray-300">
+                            {{ $offerCard['description'] }}
                         </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>AFL, basketball, cricket, soccer, rugby</li>
-                            <li>Game jerseys, shorts, warm-up sets</li>
-                            <li>Sublimation, embroidery, heat transfer</li>
-                        </ul>
-                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW UNIFORM DETAIL PAGE <span>→</span>
-                        </a>
-                    </div>
-                </article>
+                    </article>
+                @endforeach
 
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">APPAREL</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Apparel</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Off-field and training apparel engineered for comfort, fit consistency, and repeat-season reorders.
+                <article class="group flex h-full flex-col justify-between border border-black bg-dark p-8 text-white transition-all duration-300 hover:bg-black">
+                    <div>
+                        <h3 class="text-[24px] font-semibold leading-tight text-white">
+                            Scale Your Brand
+                        </h3>
+                        <p class="mt-4 text-[17px] leading-relaxed text-gray-300">
+                            High-performance gear engineered for elite athletes. From fabric sourcing to final stitch, we handle the heavy lifting.
                         </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>Polos, hoodies, jackets, training tees</li>
-                            <li>Performance and fleece material options</li>
-                            <li>Private label and retail-ready finishing</li>
-                        </ul>
-                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW APPAREL DETAIL PAGE <span>→</span>
-                        </a>
                     </div>
-                </article>
 
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">MERCH</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Club & Fan Merchandise</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Supporter and community merchandise for clubs, schools, and events with controlled quality at scale.
-                        </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>Beanies, scarves, hats, promo products</li>
-                            <li>Sponsor-ready artwork placement</li>
-                            <li>Bulk and seasonal reorder planning</li>
-                        </ul>
-                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW MERCH DETAIL PAGE <span>→</span>
+                    <div class="mt-10">
+                        <a href="{{ route('contact') }}" class="btn btn-outline-light btn-md">
+                            Contact Us
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
                         </a>
                     </div>
                 </article>
             </div>
-
         </div>
     </section>
 

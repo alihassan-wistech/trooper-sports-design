@@ -1,7 +1,8 @@
 {
     "agents": [
         "cursor",
-        "opencode"
+        "opencode",
+        "codex"
     ],
     "guidelines": true,
     "mcp": true,
