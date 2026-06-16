@@ -15,6 +15,11 @@ class AuthenticationTest extends TestCase
         $response = $this->get('/login');
 
         $response->assertStatus(200);
+        $response->assertSee('Troopers Sports logo', false);
+        $response->assertSee('Secure Access');
+        $response->assertSee('Manage inquiries, analytics, and website controls for Troopers Sports.');
+        $response->assertSee('Back to public website');
+        $response->assertDontSee('Forgot your password?');
     }
 
     public function test_users_can_authenticate_using_the_login_screen(): void

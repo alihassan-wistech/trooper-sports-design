@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\SeoPageSetting;
 use App\Models\SiteScriptSetting;
+use Illuminate\View\View;
 
 class FrontendController extends Controller
 {
-    public function home()
+    public function home(): View
     {
         return view('frontend.home', $this->buildSeoPayload(
             'home',
             'Troopers Sports – Premium Factory-Direct Custom Sportswear',
             'Troopers Sports creates premium factory-direct custom sportswear, fitness apparel, and team wear with reliable global delivery.'
-        ));
+        ) + [
+            'categoryCards' => Category::query()->published()->ordered()->get(),
+        ]);
     }
 
-    public function about()
+    public function about(): View
     {
         return view('frontend.about', $this->buildSeoPayload(
             'about',
@@ -25,7 +29,7 @@ class FrontendController extends Controller
         ));
     }
 
-    public function contact()
+    public function contact(): View
     {
         return view('frontend.contact', $this->buildSeoPayload(
             'contact',
@@ -34,13 +38,31 @@ class FrontendController extends Controller
         ));
     }
 
-    public function teamUniforms()
+    public function teamUniforms(): View
     {
-        return view('frontend.team-uniforms', $this->buildSeoPayload(
-            'team-uniforms',
-            'Custom Team Uniforms – Bulk Manufacturing by Troopers Sports',
-            'Explore bulk custom team uniform manufacturing with sub-categories, construction details, branding options, and gallery inspiration for clubs, brands, and distributors.'
-        ));
+        $category = Category::query()
+            ->where('slug', 'team-uniforms')
+            ->published()
+            ->firstOrFail();
+
+        return $this->category($category);
+    }
+
+    public function category(Category $category): View
+    {
+        abort_unless($category->is_published, 404);
+
+        $resolvedTitle = $category->seo_title ?: $category->title.' - Troopers Sports';
+        $resolvedDescription = $category->seo_description ?: $category->summary;
+
+        return view('frontend.team-uniforms', [
+            'category' => $category,
+            'seoTitle' => $resolvedTitle,
+            'seoMetaDescription' => $resolvedDescription,
+            'seoSchemaJson' => $this->defaultSchemaJson($category->slug, $resolvedTitle, $resolvedDescription),
+            'injectedHeaderScripts' => SiteScriptSetting::query()->where('setting_key', 'default')->value('header_scripts'),
+            'injectedFooterScripts' => SiteScriptSetting::query()->where('setting_key', 'default')->value('footer_scripts'),
+        ]);
     }
 
     private function buildSeoPayload(string $pageKey, string $defaultTitle, string $defaultDescription): array
@@ -67,7 +89,7 @@ class FrontendController extends Controller
             'about' => route('about'),
             'contact' => route('contact'),
             'team-uniforms' => route('categories.team-uniforms'),
-            default => url('/'.ltrim($pageKey, '/')),
+            default => route('categories.show', ['category' => $pageKey]),
         };
 
         return (string) json_encode([

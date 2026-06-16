@@ -181,66 +181,41 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">TEAM WEAR</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Uniforms</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Built for match-day performance with sport-specific cuts, panel mapping, and durable branding methods.
-                        </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>AFL, basketball, cricket, soccer, rugby</li>
-                            <li>Game jerseys, shorts, warm-up sets</li>
-                            <li>Sublimation, embroidery, heat transfer</li>
-                        </ul>
-                        <a href="{{ route('categories.team-uniforms') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW UNIFORM DETAIL PAGE <span>→</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">APPAREL</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Custom Team Apparel</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Off-field and training apparel engineered for comfort, fit consistency, and repeat-season reorders.
-                        </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>Polos, hoodies, jackets, training tees</li>
-                            <li>Performance and fleece material options</li>
-                            <li>Private label and retail-ready finishing</li>
-                        </ul>
-                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW APPAREL DETAIL PAGE <span>→</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
-                    <div class="aspect-[16/10] border-b border-black bg-gray-200 flex items-center justify-center">
-                        <span class="font-heading text-4xl text-neutral-dark group-hover:text-white transition-colors">MERCH</span>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-[24px] font-semibold text-dark group-hover:text-white transition-colors">Club & Fan Merchandise</h3>
-                        <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark group-hover:text-white transition-colors">
-                            Supporter and community merchandise for clubs, schools, and events with controlled quality at scale.
-                        </p>
-                        <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark group-hover:text-gray-300 transition-colors">
-                            <li>Beanies, scarves, hats, promo products</li>
-                            <li>Sponsor-ready artwork placement</li>
-                            <li>Bulk and seasonal reorder planning</li>
-                        </ul>
-                        <a href="{{ route('contact') }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
-                            VIEW MERCH DETAIL PAGE <span>→</span>
-                        </a>
-                    </div>
-                </article>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                @foreach (($categoryCards ?? collect()) as $categoryCard)
+                    <article class="group border border-black bg-light transition-all duration-300 hover:bg-dark">
+                        <div class="aspect-[16/10] overflow-hidden border-b border-black bg-gray-200">
+                            @if ($categoryCard->card_image)
+                                <img
+                                    src="{{ str_starts_with($categoryCard->card_image, 'http') ? $categoryCard->card_image : asset($categoryCard->card_image) }}"
+                                    alt="{{ $categoryCard->name }}"
+                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy"
+                                >
+                            @else
+                                <div class="flex h-full items-center justify-center">
+                                    <span class="font-heading text-4xl text-neutral-dark transition-colors group-hover:text-white">
+                                        {{ $categoryCard->card_label }}
+                                    </span>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-[24px] font-semibold text-dark transition-colors group-hover:text-white">{{ $categoryCard->name }}</h3>
+                            <p class="mt-3 text-[17px] leading-relaxed text-neutral-dark transition-colors group-hover:text-white">
+                                {{ $categoryCard->summary }}
+                            </p>
+                            <ul class="mt-5 space-y-2 text-[15px] text-neutral-dark transition-colors group-hover:text-gray-300">
+                                @foreach (($categoryCard->card_features ?? []) as $feature)
+                                    <li>{{ $feature }}</li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ route('categories.show', $categoryCard) }}" class="mt-6 btn btn-light btn-sm btn-fixed-on-group">
+                                {{ strtoupper($categoryCard->card_cta_label) }} <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+                @endforeach
             </div>
 
         </div>

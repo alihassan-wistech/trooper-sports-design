@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AnalyticsDashboardController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SeoSettingsController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
@@ -11,10 +12,14 @@ Route::middleware('track.visitors')->group(function () {
     Route::get('/about', [FrontendController::class, 'about'])->name('about');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
     Route::get('/categories/team-uniforms', [FrontendController::class, 'teamUniforms'])->name('categories.team-uniforms');
+    Route::get('/categories/{category}', [FrontendController::class, 'category'])->name('categories.show');
 });
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [AnalyticsDashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/analytics', [AnalyticsDashboardController::class, 'analytics'])->name('analytics');
+    Route::resource('/admin/categories', CategoryController::class)
+        ->except(['show', 'destroy'])
+        ->names('admin.categories');
     Route::get('/admin/seo-settings', [SeoSettingsController::class, 'index'])->name('admin.seo-settings');
     Route::patch('/admin/seo-settings/pages', [SeoSettingsController::class, 'updatePages'])->name('admin.seo-settings.pages');
     Route::patch('/admin/seo-settings/scripts', [SeoSettingsController::class, 'updateScripts'])->name('admin.seo-settings.scripts');

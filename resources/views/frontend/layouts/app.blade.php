@@ -189,6 +189,31 @@
 <body class="font-sans text-neutral-dark bg-light antialiased">
 
 
+    @auth
+        <div class="bg-black text-white border-b border-neutral-800">
+            <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-2 flex flex-col gap-2 text-sm font-semibold sm:flex-row sm:items-center sm:justify-between">
+                <p class="uppercase tracking-[0.12em] text-gray-300">
+                    Admin mode
+                    <span class="normal-case tracking-normal text-white">/ {{ auth()->user()->name }}</span>
+                </p>
+                <div class="flex flex-wrap items-center gap-2">
+                    <a href="{{ route('dashboard') }}" class="border border-white px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-white transition hover:bg-white hover:text-black">
+                        Dashboard
+                    </a>
+                    <a href="{{ route('admin.categories.index') }}" class="border border-white px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-white transition hover:bg-white hover:text-black">
+                        Categories
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="border border-white px-3 py-1.5 text-xs uppercase tracking-[0.08em] text-white transition hover:bg-white hover:text-black">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endauth
+
     <!-- 1. Navigation Bar -->
     <nav class="sticky top-0 z-50 bg-white border-b border-gray shadow-sm">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
